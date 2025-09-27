@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="Map view configurations" minToolsVersion="14.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,7 +22,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P5e-Fg-j8B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-23.664122137404579" y="-2.1126760563380285"/>
+            <point key="canvasLocation" x="-135" y="-2"/>
         </scene>
         <!--Convert-->
         <scene sceneID="tne-QT-ifu">
@@ -85,6 +86,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="dzZ-9m-aZh" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="x1b-wV-4PD">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="selectedImageTintColor" red="0.88235294119999996" green="0.34509803919999998" blue="0.16078431369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -92,15 +94,80 @@
                     <connections>
                         <segue destination="y15-0i-PrM" kind="relationship" relationship="viewControllers" id="OVf-L6-rLh"/>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="cnC-rb-I5H"/>
+                        <segue destination="aCP-EG-oAu" kind="relationship" relationship="viewControllers" id="Bmk-WJ-7xW"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MA1-WT-Oap" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-828" y="-2"/>
+            <point key="canvasLocation" x="-831" y="-2"/>
+        </scene>
+        <!--Quiz-->
+        <scene sceneID="Ztc-hz-DRN">
+            <objects>
+                <viewController id="aCP-EG-oAu" customClass="ViewController" customModule="WorldTrotter" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HUt-fc-Ji0">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="769"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="???" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qeu-Ql-6MK">
+                                <rect key="frame" x="184" y="151" width="25" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="???" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A6M-hy-Vd4">
+                                <rect key="frame" x="184" y="416" width="25" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bvA-iU-l6j">
+                                <rect key="frame" x="130" y="180" width="133" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Next Question"/>
+                                <connections>
+                                    <action selector="showNextQuestion:" destination="aCP-EG-oAu" eventType="touchUpInside" id="izn-3o-xhh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tao-FH-PVZ">
+                                <rect key="frame" x="133" y="445" width="127" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Show Answer"/>
+                                <connections>
+                                    <action selector="showAnswer:" destination="aCP-EG-oAu" eventType="touchUpInside" id="x0R-Ei-TrK"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="cqB-zD-vyC"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="qeu-Ql-6MK" firstAttribute="centerX" secondItem="HUt-fc-Ji0" secondAttribute="centerX" id="JbH-ya-lzk"/>
+                            <constraint firstItem="Tao-FH-PVZ" firstAttribute="centerX" secondItem="bvA-iU-l6j" secondAttribute="centerX" id="YIq-QY-9C3"/>
+                            <constraint firstItem="qeu-Ql-6MK" firstAttribute="centerX" secondItem="bvA-iU-l6j" secondAttribute="centerX" id="haf-oP-bbO"/>
+                            <constraint firstItem="A6M-hy-Vd4" firstAttribute="top" secondItem="bvA-iU-l6j" secondAttribute="bottom" constant="201" id="o3n-9m-ZGJ"/>
+                            <constraint firstItem="Tao-FH-PVZ" firstAttribute="top" secondItem="A6M-hy-Vd4" secondAttribute="bottom" constant="8" symbolic="YES" id="qaP-no-dUe"/>
+                            <constraint firstItem="bvA-iU-l6j" firstAttribute="top" secondItem="qeu-Ql-6MK" secondAttribute="bottom" constant="8" symbolic="YES" id="sez-0c-qxX"/>
+                            <constraint firstItem="qeu-Ql-6MK" firstAttribute="top" secondItem="cqB-zD-vyC" secondAttribute="top" constant="92" id="sps-XV-XT7"/>
+                            <constraint firstItem="A6M-hy-Vd4" firstAttribute="centerX" secondItem="bvA-iU-l6j" secondAttribute="centerX" id="zNm-M6-uV7"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Quiz" image="questionmark.bubble" catalog="system" id="Qf6-rP-MIS"/>
+                    <connections>
+                        <outlet property="answerLabel" destination="A6M-hy-Vd4" id="T5Z-o0-xHb"/>
+                        <outlet property="questionLabel" destination="qeu-Ql-6MK" id="nrG-sJ-4Hb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VMl-We-TH1" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="553" y="-2"/>
         </scene>
     </scenes>
     <resources>
         <image name="mappin.circle.fill" catalog="system" width="128" height="123"/>
+        <image name="questionmark.bubble" catalog="system" width="128" height="110"/>
         <image name="thermometer.high" catalog="system" width="80" height="128"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>
